@@ -2,10 +2,15 @@ aiofiles==22.1.0
 asgiref==3.5.2
 backports.zoneinfo==0.2.1
 Django==4.1.4
+django-auditlog==2.2.1
+djangorestframework==3.14.0
 httptools==0.5.0
 multidict==6.0.3
+python-dateutil==2.8.2
+pytz==2022.7
 sanic==22.9.1
 sanic-routing==22.8.0
+six==1.16.0
 sqlparse==0.4.3
 ujson==5.6.0
 uvloop==0.17.0

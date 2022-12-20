@@ -2,27 +2,7 @@
 import os
 import subprocess
 
-def Systeam():
-    """
-        return: Mac Win Linux
-
-        (Cygwin算作Win AIX算作Linux)
-
-        'win32':Windows
-        'cygwin':Windows/Cygwin
-        'darwin':macOS
-        'aix':AIX
-        'linux':Linux
-    """
-    from sys import platform
-    a = str(platform)
-    if a == 'win32' or a == 'cygwin':
-        s = 'Win'
-    elif a == 'darwin':
-        s = 'Mac'
-    elif a == 'linux' or a == 'aix':
-        s = 'Linux'
-    return s
+from Back.Code import Systeam
 
 
 if __name__ == '__main__':
@@ -33,6 +13,7 @@ if __name__ == '__main__':
         s = 'venv\Scripts\activate;'
     else:
         s = 'source venv/bin/activate;'
+    print(f_u)
     FrontRun = 'cd ' + f_u + ';' + s + 'python manage.py runserver ' + str(post)
     BackRun = 'cd ' + f_u + ';' + s + 'python ./Back/main.py'
     FrontRun_S = subprocess.Popen(FrontRun, shell=True)
@@ -41,7 +22,7 @@ if __name__ == '__main__':
         FrontRun_S.wait()
         BackRun_S.wait()
     except KeyboardInterrupt:
-        FrontRun_S.kill()
-        BackRun_S.kill()
+        FrontRun_S.terminate()
+        BackRun_S.terminate()
         exit()
 
