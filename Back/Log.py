@@ -44,28 +44,28 @@ class Log():
         P = str(P)
         Time_ = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         Time = Print_Colour.OKBLUE + '[' + Time_ + ']' + Print_Colour.ENDC + ' '
-        I = Print_Colour.OKGREEN + '[' +'INFO' + ']' + Print_Colour.ENDC + ' '
+        I = Print_Colour.OKGREEN + '[' + 'INFO' + ']' + Print_Colour.ENDC + ' '
         P_ = Print_Colour.GRAY + P + Print_Colour.ENDC
-        print(Time+I+P_)
-        r.append(Time_+' '+'INFO '+P)
+        print(Time + I + P_)
+        r.append(Time_ + ' ' + 'INFO ' + P)
+
     def BEBUG(P):
         P = str(P)
         Time_ = datetime.datetime.now().strftime('%H:%M:%S')
         Time = Print_Colour.OKBLUE + '[' + Time_ + ']' + Print_Colour.ENDC + ' '
-        I = Print_Colour.WARNING + '[' +'BEBUG' + ']' + Print_Colour.ENDC + ' '
+        I = Print_Colour.WARNING + '[' + 'BEBUG' + ']' + Print_Colour.ENDC + ' '
         P_ = Print_Colour.GRAY + P + Print_Colour.ENDC
-        print(Time+I+P_)
-        r.append(Time_+' '+'BEBUG '+P)
+        print(Time + I + P_)
+        r.append(Time_ + ' ' + 'BEBUG ' + P)
+
     def ERROR(P):
         P = str(P)
         Time_ = datetime.datetime.now().strftime('%H:%M:%S')
         Time = Print_Colour.OKBLUE + '[' + Time_ + ']' + Print_Colour.ENDC + ' '
-        I = Print_Colour.FAIL + '[' +'ERROR' + ']' + Print_Colour.ENDC + ' '
+        I = Print_Colour.FAIL + '[' + 'ERROR' + ']' + Print_Colour.ENDC + ' '
         P_ = Print_Colour.GRAY + P + Print_Colour.ENDC
-        print(Time+I+P_)
-        r.append(Time_+' '+'ERROR '+P)
-
-
+        print(Time + I + P_)
+        r.append(Time_ + ' ' + 'ERROR ' + P)
 
 
 def Log_Return():
