@@ -2,7 +2,7 @@
 import os
 import sys
 
-class INFO():
+class BackIPAndPost():
     BackIP = '127.0.0.1'
     BackPost = 9000
     BackURL = 'http://'+str(BackIP) + ':' + str(BackPost)

@@ -8,9 +8,11 @@ from sanic.response import json
 
 app = Sanic("SFPanel_Back")
 
-@app.route("/")
+@app.route("/ping")
 async def test(request):
+    Log.INFO('/ping')
     return json({"hello": "world"})
+
 async def Start():
     Log.INFO('后端启动成功')
 
