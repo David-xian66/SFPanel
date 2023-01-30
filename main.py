@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     s = str(sys.platform)
     if s == 'Windows' or s == 'cygwin':
-        f = '&'
+        f = '&&'
     else:
         f = ';'
 
