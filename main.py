@@ -11,9 +11,9 @@ if __name__ == '__main__':
     f_u = os.path.abspath(f)
     post = 8000
     if Systeam() == 'Win':
-        s = 'venv\Scripts\activate;'
+        s = os.path.join('venv','Scripts','activate') + ';'
     else:
-        s = 'source venv/bin/activate;'
+        s = 'source ' + os.path.join('venv','bin','activate') + ';'
     print(f_u)
     Front_ManageFile = os.path.join('Front', 'manage.py')
     Back_MainFile = os.path.join('Back', 'main.py')
@@ -22,6 +22,8 @@ if __name__ == '__main__':
 
     FrontRun = 'cd ' + f_u + ';' + s + PyRun_S + ' ' + Front_ManageFile + ' runserver ' + str(post)
     BackRun = 'cd ' + f_u + ';' + s + PyRun_S + ' ' + Back_MainFile
+    print(FrontRun)    
+    print(BackRun)
     FrontRun_S = subprocess.Popen(FrontRun, shell=True)
     BackRun_S = subprocess.Popen(BackRun, shell=True)
     try:

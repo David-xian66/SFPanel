@@ -7,16 +7,19 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/
 """
 
-import os,requests
+import os,requests,sys
 
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Front.settings')
 
+sys.path.append("./")
+
 application = get_wsgi_application()
 
 from Back.Log import Log as print
 from manage import INFO
+
 print.INFO('前端启动成功')
 BackURL = INFO.BackURL
 print.INFO('尝试连接到后端 -> ' + BackURL)
