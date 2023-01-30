@@ -60,7 +60,7 @@ class Log():
 
     def DEBUG(self,P):
         P = str(P)
-        Time_ = datetime.datetime.now().strftime('%H:%M:%S')
+        Time_ = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         Time = Print_Colour.OKBLUE + '[' + Time_ + ']' + Print_Colour.ENDC + ' '
         I = Print_Colour.WARNING + '[' + 'DEBUG' + ']' + Print_Colour.ENDC + ' '
         P_ = Print_Colour.GRAY + P + Print_Colour.ENDC
@@ -70,7 +70,7 @@ class Log():
 
     def ERROR(self,P):
         P = str(P)
-        Time_ = datetime.datetime.now().strftime('%H:%M:%S')
+        Time_ = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         Time = Print_Colour.OKBLUE + '[' + Time_ + ']' + Print_Colour.ENDC + ' '
         I = Print_Colour.FAIL + '[' + 'ERROR' + ']' + Print_Colour.ENDC + ' '
         P_ = Print_Colour.GRAY + P + Print_Colour.ENDC

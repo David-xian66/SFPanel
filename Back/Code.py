@@ -1,4 +1,7 @@
 # coding=utf-8
+import json
+
+
 def Systeam():
     """
         return: Mac Win Linux
@@ -20,3 +23,23 @@ def Systeam():
     elif a == 'linux' or a == 'aix':
         s = 'Linux'
     return s
+
+
+def JsonWrite(JsonFile,Json_):
+    """
+        写入Json
+        :param JsonFile: Json路径
+        :param Json_: Json内容
+    """
+    with open(JsonFile, 'w+', encoding='utf_8') as f:
+        json.dump(Json_, f, ensure_ascii=False, sort_keys=True, indent=4, separators=(',', ': '))
+
+
+def JsonRead(JsonFile):
+    """
+        读取Json
+        JsonFile = Json的目录
+    """
+    with open(JsonFile, 'r', encoding='utf_8') as f:
+        r = json.load(f, strict=False)
+    return r
