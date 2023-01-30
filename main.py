@@ -37,7 +37,7 @@ if __name__ == '__main__':
     f_u = os.path.abspath(f)
 
     s = str(sys.platform)
-    if s == 'Windows' or s == 'cygwin':
+    if s == 'win32' or s == 'cygwin':
         f = '&&'
     else:
         f = ';'
