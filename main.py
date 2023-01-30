@@ -6,6 +6,8 @@ import sys
 from Back.Code import Systeam
 from Back.Log import Log as print
 
+print = print('Starter')
+
 def Cheak():
     V = list(sys.version_info)
     print.INFO('--运行信息--')

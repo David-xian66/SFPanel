@@ -24,22 +24,26 @@ application = get_wsgi_application()
 from Back.Log import Log as print
 from manage import INFO
 
+print = print('Front')
 print.INFO('前端启动成功')
 BackURL = INFO.BackURL + '/ping'
 print.INFO('尝试连接到后端 -> ' + BackURL)
 
 while True:
     try:
-        a = ''
         a = requests.get(BackURL)
-        print(a)
-        j = a.json()
-        print.INFO(j)
-        if str(j) == "{'hello': 'world'}":
-            break
-        else:
-            print.ERROR('连接失败 5s后重试,收到了异常回复,请检查IP 端口设置是否正确,收到的异常输出: ' + str(j))
+        code = a.status_code
+        if code != 200:
+            print.ERROR('连接失败 5s后重试,收到了异常回复,请检查IP 端口设置是否正确,收到的状态错误: ' + str(code))
             time.sleep(5)
+        else:
+            j = a.json()
+            print.INFO(j)
+            if str(j) == "{'hello': 'world'}":
+                break
+            else:
+                print.ERROR('连接失败 5s后重试,收到了异常回复,请检查IP 端口设置是否正确,收到的异常输出: ' + str(j))
+                time.sleep(5)
     except:
         del a
         ErrorInfo = traceback.format_exc()

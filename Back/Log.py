@@ -40,31 +40,42 @@ class Print_Colour:
 
 
 class Log():
-    def INFO(P):
+    def __init__(self,APP):
+        """
+            Log系统
+            :param APP: 发送命令的系统
+        """
+        super(Log, self).__init__()
+        self.APP = APP
+        
+    def INFO(self,P):
         P = str(P)
         Time_ = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         Time = Print_Colour.OKBLUE + '[' + Time_ + ']' + Print_Colour.ENDC + ' '
         I = Print_Colour.OKGREEN + '[' + 'INFO' + ']' + Print_Colour.ENDC + ' '
         P_ = Print_Colour.GRAY + P + Print_Colour.ENDC
-        print(Time + I + P_)
+        APP = Print_Colour.WARNING + '[' + self.APP + ']' + Print_Colour.ENDC
+        print(Time + APP + I + P_)
         r.append(Time_ + ' ' + 'INFO ' + P)
 
-    def BEBUG(P):
+    def DEBUG(self,P):
         P = str(P)
         Time_ = datetime.datetime.now().strftime('%H:%M:%S')
         Time = Print_Colour.OKBLUE + '[' + Time_ + ']' + Print_Colour.ENDC + ' '
-        I = Print_Colour.WARNING + '[' + 'BEBUG' + ']' + Print_Colour.ENDC + ' '
+        I = Print_Colour.WARNING + '[' + 'DEBUG' + ']' + Print_Colour.ENDC + ' '
         P_ = Print_Colour.GRAY + P + Print_Colour.ENDC
-        print(Time + I + P_)
-        r.append(Time_ + ' ' + 'BEBUG ' + P)
+        APP = Print_Colour.WARNING + '[' + self.APP + ']' + Print_Colour.ENDC
+        print(Time + APP + I + P_)
+        r.append(Time_ + ' ' + 'DEBUG ' + P)
 
-    def ERROR(P):
+    def ERROR(self,P):
         P = str(P)
         Time_ = datetime.datetime.now().strftime('%H:%M:%S')
         Time = Print_Colour.OKBLUE + '[' + Time_ + ']' + Print_Colour.ENDC + ' '
         I = Print_Colour.FAIL + '[' + 'ERROR' + ']' + Print_Colour.ENDC + ' '
         P_ = Print_Colour.GRAY + P + Print_Colour.ENDC
-        print(Time + I + P_)
+        APP = Print_Colour.WARNING + '[' + self.APP + ']' + Print_Colour.ENDC
+        print(Time + APP + I + P_)
         r.append(Time_ + ' ' + 'ERROR ' + P)
 
 
