@@ -32,6 +32,7 @@ while True:
     try:
         a = ''
         a = requests.get(BackURL)
+        print(a)
         j = a.json()
         print.INFO(j)
         if str(j) == "{'hello': 'world'}":
