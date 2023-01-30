@@ -13,6 +13,8 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Front.settings')
 
+sys.path.append(os.getcwd)
+
 sys.path.append("./")
 
 application = get_wsgi_application()
