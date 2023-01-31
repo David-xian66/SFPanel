@@ -4,7 +4,7 @@ import os
 import subprocess
 import sys
 
-from Back.Code import Systeam,JsonWrite,JsonRead
+from Back.Code import system, JsonWrite, JsonRead
 from Back.Log import Log as print
 
 print = print('Starter')
@@ -34,7 +34,7 @@ def Config():
     }
     JsonFile_Path = os.path.join('config.json')
     if not os.path.exists(JsonFile_Path) or not os.path.getsize(JsonFile_Path):
-        JsonWrite(JsonFile_Path,Json)
+        JsonWrite(JsonFile_Path, Json)
     else:
         try:
             print.INFO('Json检查开始')
@@ -48,8 +48,7 @@ def Config():
             exit(-1)
 
 
-
-def Cheak():
+def Check():
     print.INFO('Start Running……')
     Config()
     V = list(sys.version_info)
@@ -76,7 +75,7 @@ def Cheak():
 
 if __name__ == '__main__':
     # PYPath = sys.executable
-    Cheak()
+    Check()
 
     f = os.path.split(os.path.realpath(__file__))[0]
     f_u = os.path.abspath(f)
@@ -88,7 +87,7 @@ if __name__ == '__main__':
         f = ';'
 
     post = 8000
-    if Systeam() == 'Win':
+    if system() == 'Win':
         s = os.path.join('venv', 'Scripts', 'activate') + f
     else:
         s = 'source ' + os.path.join('venv', 'bin', 'activate') + f

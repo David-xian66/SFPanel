@@ -2,12 +2,9 @@
 import json
 
 
-def Systeam():
+def system():
     """
         return: Mac Win Linux
-
-        (Cygwin算作Win AIX算作Linux)
-
         'win32':Windows
         'cygwin':Windows/Cygwin
         'darwin':macOS
