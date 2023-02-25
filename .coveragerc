@@ -2,7 +2,7 @@
 branch = True
 source = sanic
 omit =
-    main.py
+    .gitignore
 
 [html]
 directory = coverage
