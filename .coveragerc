@@ -1,0 +1,21 @@
+[run]
+branch = True
+source = sanic
+omit =
+    site-packages
+    Front/*
+    Back/*
+    main.py
+
+[html]
+directory = coverage
+
+[report]
+exclude_lines =
+    no cov
+    no qa
+    noqa
+    NOQA
+    pragma: no cover
+    TYPE_CHECKING
+skip_empty = True
