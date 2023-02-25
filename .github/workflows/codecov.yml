@@ -16,10 +16,3 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
-      with:
-          files: ./.coveragerc
-          flags: unittests
-          env_vars: OS,PYTHON
-          name: sanic-coverage
-          fail_ci_if_error: true
-          verbose: true
