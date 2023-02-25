@@ -2,9 +2,6 @@
 branch = True
 source = sanic
 omit =
-    site-packages
-    Front/*
-    Back/*
     main.py
 
 [html]
