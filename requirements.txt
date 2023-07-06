@@ -4,7 +4,7 @@ backports.zoneinfo==0.2.1
 certifi==2022.12.7
 charset-normalizer==2.1.1
 commonmark==0.9.1
-Django==4.1.9
+Django==4.1.10
 django-auditlog==2.2.1
 djangorestframework==3.14.0
 httptools==0.5.0
